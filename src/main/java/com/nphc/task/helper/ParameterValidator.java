@@ -6,11 +6,11 @@ public class ParameterValidator {
 
 	public static boolean checkCSVDateIsValid(String inputDate) {
 
-		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 
 		DateValidator validator = new DateValidatorUsingLocalDate(dateFormatter);
 
-		DateTimeFormatter dateFormatterYYYYMMDD = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+		DateTimeFormatter dateFormatterYYYYMMDD = DateTimeFormatter.ofPattern("dd-mmm-yy");
 
 		DateValidator validatorYYYYMMDD = new DateValidatorUsingLocalDate(dateFormatterYYYYMMDD);
 		if (validator.isValid(inputDate) || validatorYYYYMMDD.isValid(inputDate)) {
@@ -21,12 +21,12 @@ public class ParameterValidator {
 
 	public static boolean checkDateFormat(String inputDate) {
 
-		DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		DateTimeFormatter.ofPattern("yyyy-mm-dd");
 		DateTimeFormatter dateFormatter = DateTimeFormatter.ISO_DATE;
 
 		DateValidator validator = new DateValidatorUsingLocalDate(dateFormatter);
 
-		DateTimeFormatter.ofPattern("yyyy-mm-dd");
+		DateTimeFormatter.ofPattern("dd-mmm-yy");
 		DateTimeFormatter dateFormatterYYYYMMDD = DateTimeFormatter.ISO_DATE;
 
 		DateValidator validatorYYYYMMDD = new DateValidatorUsingLocalDate(dateFormatterYYYYMMDD);
